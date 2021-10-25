@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Cham Soc</title>
+    <style>
+        :root{
+            --maincolor: #366352;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html{
+            font-family: Roboto, sans-serif ;
+            font-size: 15px;
+            background: #E2E2E2;
+        }
+        body{
+            background: white;
+            width: 1153px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 5px;
+        }
+        #header{
+            height: 36px;
+            background: rgb(210, 248, 153);
+        }
+        #header .dtd{
+            height: 100%;
+            width: 120px;
+            line-height: 36px;
+            background: var(--maincolor);
+            color: white;
+            text-transform: uppercase;
+            font-size: 00.75rem;
+            text-align: center;
+            float: left;
+            font-weight: bold;
+        }
+        #header .arrow{
+            border-top: 18px solid rgb(210, 248, 153) ;
+            border-bottom: 18px solid rgb(210, 248, 153);
+            border-left: 18px solid var(--maincolor);
+            float: left;
+        }
+        #header .running-text{
+            height: 100%;
+            width: 1005px;
+            float: left;
+            overflow: hidden;
+            
+        }
+        #header .running-text>ul{
+            width: 100%;
+            height: 100%;
+            animation:  runningtext linear 40s infinite;
+            position: relative;
+            white-space: nowrap;
+            line-height: 36px;
+            
+        }
+        #header .running-text>ul:hover{
+            animation-play-state: paused;
+        }
+        @keyframes runningtext{
+            0%{left: 100%;}
+            100%{left: -4800px;}
+        }
+        #header .running-text>ul>li{
+            display: inline-block;
+            font-weight: bold;
+            margin-left: 15px;
+            
+        }
+        #header .running-text>ul>li::before{
+            content: "<< ";
+            color: var(--maincolor);
+        }
+        #header .running-text>ul>li>a{
+            color: red;
+            text-decoration: none;
+        }
+        #header .running-text>ul>li>a:hover{
+            color: rgb(47, 207, 47);
+        }
+        #nav_menu{
+            height: 115px;
+            /*background: pink;*/
+        }
+        #nav_menu .anh{
+            float: left;
+            width: 302px;
+        }
+        #nav_menu .anh>img{
+            float: left;
+            margin-top: 20px;
+        }
+        #nav_menu .search {
+            float: left;
+            width: 370px;
+            height: 41px;
+            margin-top:35px ;
+            border-radius: 6px 0px 0px 6px;
+            border: 1px solid var(--maincolor);
+        }
+        #nav_menu .search input{
+            font-size: 1.2rem;
+            margin-top: 10px;
+            margin-left: 8px;
+            width: 350px;
+            float: left;
+            border: none;
+        }
+        #nav_menu .search input:focus{
+            outline: none;
+        }
+        #nav_menu .icon-search{
+            width: 66px;
+            height: 41px;
+            background: var(--maincolor);
+            float: left;
+            border-left: 1px solid var(--maincolor);
+            margin-top: 35px;
+            border-radius: 0px 6px 6px 0px;
+        }
+        #nav_menu .icon-search span{
+            font-size: 1.5rem;
+            color: white;
+            margin-top: 7.5px;
+            margin-left: 18px;
+        }
+        #nav_menu .contact{
+            width: 342px;
+            height: 35px;
+            float: left;
+            margin-top: 20px;
+            margin-left: 45px;
+        }
+        #nav_menu .contact>ul>li{
+            font-size: 0.9rem;
+            list-style: none;
+            float: left;
+            padding-left: 12px;
+        }
+        #nav_menu .contact>ul>li>span{
+            font-size: 0.8rem;
+        }
+        #nav_menu .contact>ul>li>a{
+            float: left;
+            color: black;
+            text-transform: uppercase;
+            border-left: 0.5px solid;
+            padding-left: 12px ;
+            text-decoration: none;
+        }
+        #nav_menu .contact>ul>li>a:hover{
+            color: rgb(47, 207, 47);
+        }
+        #nav_menu .camket{
+            width: 342px;
+            height: 35px;
+            float: left;
+            border-top: 0.3px dotted;
+            margin-left: 40px;
+            padding-top: 10px;
+        }
+        #nav_menu .camket>p>span{
+            text-transform: uppercase;
+            color: red;
+        }
+        #mainMenu{
+            height: 55px;
+            width: 100%;
+            background: rgb(251,246,240);
+        }
+        #mainMenu>ul{
+            text-transform: uppercase;
+            height: 100%; 
+        }
+        #mainMenu>ul>li{
+            text-transform: uppercase;
+            float: left;
+            list-style: none;
+            padding: 0px 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            line-height: 55px;
+            position: relative;
+        }
+        #mainMenu>ul>li:hover{
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+        }
+        #mainMenu>ul>li>a{
+            text-decoration: none;
+            color: var(--maincolor);
+            text-align: center;
+        }
+        #mainMenu>ul>li:hover{
+            color: rgb(47, 207, 47);
+        }
+        #mainMenu>ul>li:hover>a{
+            color: rgb(47, 207, 47) ;
+        }
+        #mainMenu>ul>li>.giohang{
+            color: rgb(47, 207, 47);
+        }
+        #mainMenu>ul>li>ul{
+            width: 260px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            background: white;
+            list-style: none;
+            position: absolute;
+            left: 0;
+            padding: 10px 0;
+            display: none;
+            z-index: 1;
+        }
+        #mainMenu>ul>li:hover>ul{
+            display: block;
+            border-top: 4px solid rgb(47, 207, 47);
+        }
+        #mainMenu>ul>li>ul>li{
+            padding-left: 20px;
+            position: relative;
+        }
+        #mainMenu>ul>li>ul>li>a{
+            color: var(--maincolor);
+            text-decoration: none;
+            text-transform: none;
+            font-size: 1.2rem;
+        }
+        #mainMenu>ul>li>ul>li>a:hover{
+            color:rgb(47, 207, 47);
+        }
+        #mainMenu>ul>li>ul>li>ul{
+            width: 260px;
+            background: white;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            list-style: none;
+            position: absolute;
+            top: 5px;
+            left: 230px;
+            padding: 10px 0;
+            display: none;
+            z-index: 2;
+        }
+        #mainMenu>ul>li>ul>li:hover>ul{
+            display: block;
+            border-top: 4px solid rgb(47, 207, 47);
+        }
+        #mainMenu>ul>li>ul>li>ul>li{
+            padding-left: 20px;
+        }
+        #mainMenu>ul>li>ul>li>ul>li>a{
+            color: var(--maincolor);
+            text-decoration: none;
+            text-transform: none;
+            font-size: 1.2rem;
+        }
+        #mainMenu>ul>li>ul>li>ul>li>a:hover{
+            color:rgb(47, 207, 47);
+        }
+        #contentPage{
+            height: 1135px;
+        }
+        #contentPage>h1{
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        #contentPage .content_left{
+            width: 790px;
+            height: 1080px;
+            float: left;
+        }
+        #contentPage .content_left>div{
+            width: 100%;
+            height: 188px;
+            margin: 30px 0;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+        }
+        #contentPage .content_left>div:first-child{
+            margin-top: 0;
+        }
+        #contentPage .content_left>div>img{
+            width: 332px;
+            height: 100%;
+            float: left;
+        }
+        #contentPage .content_left>div>div{
+            width: 458px;
+            height: 100%;
+            float: left;
+            padding: 15px;
+        }
+        #contentPage .content_left>div>div>p{
+            text-align: justify;
+        }
+        #contentPage .content_left>div>div .contentt{
+            height: 62px;
+            overflow: hidden;
+        }
+        #contentPage .content_left>div>div>p>a{
+            text-decoration: none;
+            font-size:1.3em;
+            font-weight: bold;
+        }
+        #contentPage .content_left>div>div>p>a:hover{
+            color: rgb(47, 207, 47);
+        }
+        #contentPage .content_left>div>div .comment{
+            color: lavender;
+        }
+        #contentPage .content_right{
+            width: 320px;
+            height: 640px;
+            float: right;
+            padding: 0px 15px 15px 15px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1)
+        }
+        #contentPage .content_right>h1{
+            font-size: 1.6rem;
+        }
+        #contentPage .content_right>div{
+            width: 100%;
+            height: 82px;
+            float: left;
+            border-top: 0.5px solid lavender;
+            border-bottom: 0.5px solid lavender;
+
+        }
+        #contentPage .content_right>div>div{
+            width: 50px;
+            height: 50px;
+            background-color: pink;
+            float: left;
+            margin-top: 15px;
+            border-radius: 50%;
+            overflow: hidden;
+            float: left;
+            
+        }
+        #contentPage .content_right>div>div>img{
+            float: left;
+            height: 100%;
+            width: 100%;
+        }
+        #contentPage .content_right>div>p{
+            margin-left: 65px;
+            margin-top: 18px;
+            font-size: 0.9rem;
+        }
+        #contentPage .content_right>div>p>a:hover{
+            color: rgb(47, 207, 47);
+        }
+        #footer{
+            height: 270px;
+            background-color: var(--maincolor);
+        }
+        #footer div{
+            height: 100%;
+            width: 33.33%;
+            float: left;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: white;
+            padding: 40px 10px;
+            padding-left: 65px;
+        }
+        #footer div>ul{
+            text-transform: none;
+            font-weight: normal;
+            font-size: 1.1rem;
+            margin: 15px 20px 15px 0;
+        }
+        #footer div>ul>li{
+            margin: 11px 0;
+            list-style: none;
+            text-align: justify;
+        }
+        #footer div>ul>li>span{
+            margin-right: 5px;
+        }
+        #footer div>ul>input{
+            width: 90%;
+            height: 40px;
+            background-color: var(--maincolor);
+            border: none;
+            padding: 10px;
+            border-bottom: 1px solid white;
+            margin-top: 20px;
+        }
+        #footer div>ul>input:focus{
+            outline: none;
+        }
+        .lienhe>ul>li> .fa{
+            padding: 10px;
+            font-size: 20px;
+            width: 40px;
+            text-align: center;
+            text-decoration: none;
+            margin: 5px 2px;
+            border: 1px solid;
+            border-radius: 50%;
+            color: white;
+        }
+        .lienhe>ul>li> .fa:hover{
+            background: rgba(241, 5, 5, 0.5);
+            border: none;
+        }
+        #footer .lienhe>ul> .BCT{
+            height: 45px;
+            width: 120px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div class="dtd">Đang tuyển dụng</div>
+        <div class="arrow"></div>
+        <div class="running-text">
+            <ul>
+                <li><a href="">Thông tin tuyển dụng nhân viên giao hàng tháng 10</a></li>
+                <li><a href="">Thông tin tuyển dụng nhân viên chăm sóc sen đá ngày 22 tháng 5 năm 2021</a></li>
+                <li><a href="">Vườn sen đá tuyển dụng nhân viên bán hàng và chăm sóc khách hàng lương thỏa thuận</a></li>
+                <li><a href="">Vườn sen đá cần tuyển gấp nhân viên làm theo giờ trong tháng 5</a></li>
+                <li><a href="">Tuyển gấp 5 nhân viên yêu thích cây cảnh, sen đá chăm sóc cửa hàng vào dịp tết nguyên đán</a></li>
+                <li><a href="">Vườn sen đá cần 5 bạn sinh viên đi giới thiệu sản phẩm tại Hồ Tây vào sáng ngày 6/7/2021(ngày Bảo vệ môi trường thế giới)</a></li>
+                <li><a href="">Thông tin tuyển dụng nhân viên thời vụ tháng 11</a></li>
+                <li><a href="">Thông tin tuyển dụng nhân viên bê đồ và lấy hàng (chỉ tuyển nữ)</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="nav_menu">
+        <div class="anh">
+            <img src="logoo.png" alt="">
+        </div>
+        <div class="search">
+                <input type="text" placeholder="Tìm kiếm danh mục, sản phẩm...">
+        </div>
+        <div class="icon-search">
+            <span class="glyphicon glyphicon-search"></span> 
+        </div>
+        <div class="contact">
+            <ul>
+                <li><span class="glyphicon glyphicon-earphone"></span></li>
+                <li>0965 344 951</li>
+                <li><a href="">Đăng ký</a></li>
+                <li><a href="">Đăng nhập</a></li>
+            </ul>
+        </div>
+        <div class="camket"><p> Giao hàng và thu tiền tại nhà <span>đơn hàng trên 100k</span></p> </div>
+    </div>
+    <div id="mainMenu">
+        <ul>
+            <li><a href="index.html"><span class="glyphicon glyphicon-home"></span> Trang chủ</a></li>
+            <li>sản phẩm
+                <ul>
+                    <li><a href="">Sen đá bịch nhựa</a>
+                        <ul>
+                            <li><a href="">Sen đá cỡ nhỏ</a></li>
+                            <li><a href="">Sen đá cỡ vừa</a></li>
+                            <li><a href="">Sen đá cỡ lớn</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">Sen đá đồng giá 25k</a></li>
+                    <li><a href="">Xương rồng</a></li>
+                    <li><a href="">Cây trồng văn phòng</a></li>
+                    <li><a href="">Tiểu cảnh</a></li>
+                    <li><a href="">Chậu trồng cây</a>
+                        <ul>
+                            <li><a href="">Chậu đất nung</a></li>
+                            <li><a href="">Chậu sứ</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">Phụ kiện trang trí</a></li>
+                    <li><a href="">Đất trồng, phân bón</a></li>
+                </ul>
+            </li>
+            <li>hướng dẫn mua hàng
+                <ul>
+                    <li><a href="">Hướng dẫn đặt hàng</a></li>
+                    <li><a href="">Hướng dẫn thanh toán</a></li>
+                    <li><a href="">Giao hàng</a></li>
+                    <li><a href="">Xem lại đơn hàng</a></li>
+                </ul>
+            </li>
+            <li><a href="">chăm sóc</a></li>
+            <li><a href="">tuyển dụng</a></li>
+            <li><a href="">Liên hệ</a></li>
+            <li><a href="" class="giohang">giỏ hàng <span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+        </ul>
+    </div>
+    <div id="contentPage">
+        <h1>Hướng dẫn chăm sóc sen đá và xương rồng</h1>
+        <div class="content_left">
+            <div>
+                <img src="AnhPage1.jpg" alt="">
+                <div>
+                    <p><a href="">Kinh nghiệm trồng và chăm sóc sen đá lên màu chuẩn như ở vườn</a></p>
+                    <p class="contentt">Sen đá được yêu thích không chỉ bởi sự nhỏ nhắn đáng yêu mà còn vì đây là một loại cây cực kì dễ sống, dễ trồng. Đối với nhiều người, có lẽ trồng và chăm sóc sen đá không có gì là quá khó. Với kinh nghiệm nhiều năm trong lĩnh vực kinh doanh cây cảnh, Cây Xinh đã tổng hợp tất cả các mẹo đơn giản hướng dẫn bạn cách trồng cây sen đá trong chậu bền và đẹp.</p>
+                    <p class="comment">19 comment</p>
+                </div>
+            </div>
+            <div>
+                <img src="AnhPage3.jpg" alt="">
+                <div>
+                    <p><a href="">8 tuyệt chiêu để chăm sóc cây cảnh vào mùa hè nắng gắt</a></p>
+                    <p class="contentt">Cây cảnh cũng như con người chúng ta, chúng cũng có thể bị tổn thương bởi nắng gắt hay mất nước trong những ngày nắng hè khi nhiệt độ vượt quá 35°C. Thay đổi chế độ tưới nước, ánh sáng, điều chỉnh một số điều kiện khác sẽ giúp ích rất nhiều cho việc chăm sóc chúng trở nên dễ dàng hơn.</p>
+                    <p class="comment">19 comment</p>
+                </div>
+            </div>
+            <div>
+                <img src="AnhPage2.jpg" alt="">
+                <div>
+                    <p><a href="">Hướng dẫn chăm sóc cây trầu bà đế vương đỏ đúng cách</a></p>
+                    <p class="contentt">Cây Trầu bà đế vương đỏ được mệnh danh là bậc đế vương có ý nghĩa mang lại sự thành công, may mắn, thịnh vượng cho gia chủ. Đồng thời chúng còn có khả năng hút các luồng khí độc như khói thuốc, bức xạ máy tính, xăng xe… Hiện nay, loài cây cảnh phong thủy để bàn này đang rất được giới văn phòng ưa chuộng và sử dụng để trang trí bày biện cho phòng làm việc.</p>
+                    <p class="comment">15 comment</p>
+                </div>
+            </div>
+            <div>
+                <img src="AnhPage4.jpg" alt="">
+                <div>
+                    <p><a href="">Hướng dẫn chi tiết cách trồng và chăm sóc cây cảnh để bàn</a></p>
+                    <p class="contentt">Cây cảnh để bàn dùng để trang trí, tăng thêm tài lộc và may mắn theo phong thủy đang là xu hướng được phần lớn giới công sở, văn phòng ưa chuộng hiện nay. Những chậu trồng cây cảnh mini để bàn đẹp tạo cho bạn sự thoải mái để hoàn thành công việc tốt nhất.</p>
+                    <p class="comment">15 comment</p>
+                </div>
+            </div>
+            <div>
+                <img src="AnhPage5.jpg" alt="">
+                <div>
+                    <p><a href="">Hướng dẫn thay chậu cho Xương Rồng đúng cách</a></p>
+                    <p class="contentt">Xương Rồng là một loại cây mọng nước không đòi hỏi quá nhiều sự săn sóc. Chúng không cần thay chậu thường xuyên thế nhưng thỉnh thoảng cũng cần bổ sung đất và cần chậu có kích thước lớn hơn.</p>
+                    <p class="comment">15 comment</p>
+                </div>
+            </div>
+        </div>
+        <div class="content_right">
+            <h1>Bài viết mới</h1>
+            <div>
+                <div>
+                    <img src="AnhPage7.jpg" alt="">
+                </div>
+                <p><a href="">Kinh nghiệm trồng và chăm sóc sen đá lên màu chuẩn như ở vườn</a></p>
+            </div>
+            <div>
+                <div>
+                    <img src="AnhPage8.jpg" alt="">
+                </div>
+                <p><a href="">Hướng dẫn tưới sen đá cho người mới bắt đầu</a></p>
+            </div>
+            <div>
+                <div>
+                    <img src="AnhPage9.jpg" alt="">
+                </div>
+                <p><a href="">10 sai lầm ai cũng mắc khi trồng sen đá</a></p>
+            </div>
+            <div>
+                <div>
+                    <img src="AnhPage10.jpg" alt="">
+                </div>
+                <p><a href="">Mùa mưa chăm sóc sen đá như thế nào?</a></p>
+            </div>
+            <div>
+                <div>
+                    <img src="AnhPage12.jpg" alt="">
+                </div>
+                <p><a href="">Nhân giống sen đá bằng nước và chai nhựa</a></p>
+            </div>
+            <div>
+                <div>
+                    <img src="AnhPage13.jpg" alt="">
+                </div>
+                <p><a href="">3 phương pháp nhân giống sen đá phổ biến</a></p>
+            </div>
+            <div>
+                <div>
+                    <img src="AnhPage14.jpg" alt="">
+                </div>
+                <p><a href="">Tái chế đồ cũ trong nhà thành chậu sen đá</a></p>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="gioithieu">giới thiệu
+            <ul>
+                <li>Vườn sen đá cung cấp sen đá sỉ và lẻ số lượng lớn khu vực Hà Nội</li>
+                <li><span class="glyphicon glyphicon-home"></span> 87A, ngõ 151, phố Nguyễn Đức cảnh, phường Tương Mai, quận Hoàng Mai, Hà Nội</li>
+                <li><span class="glyphicon glyphicon-earphone"></span> 0965 344 951</li>
+            </ul>
+        </div>
+        <div class="nhantin">đăng ký nhận tin
+            <ul>
+                <li>Hãy nhập email của mình vào đây để nhận thông báo mới nhất của chúng tôi!</li>
+                <input type="text" placeholder="Nhập email của bạn">
+                <a href=""><span class="glyphicon glyphicon-send"></span></a>
+            </ul>
+        </div>
+        <div class="lienhe">kết nối với chúng tôi
+            <ul>
+                <li>
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-google"></a>
+                    <a href="#" class="fa fa-youtube"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                </li>
+                <img src="thanhtoan.jpg" alt="">
+                <img src="bocongthuong.png" alt="" class="BCT">
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
