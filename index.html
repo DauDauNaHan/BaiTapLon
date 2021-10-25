@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Vườn Sen Đá</title>
+    <style>
+        :root{
+            --maincolor: #366352;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html{
+            font-family: Roboto, sans-serif ;
+            font-size: 15px;
+            background: #E2E2E2;
+        }
+        body{
+            background: white;
+            width: 1153px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 5px;
+        }
+        #header{
+            height: 36px;
+            background: rgb(210, 248, 153);
+        }
+        #header .dtd{
+            height: 100%;
+            width: 120px;
+            line-height: 36px;
+            background: var(--maincolor);
+            color: white;
+            text-transform: uppercase;
+            font-size: 00.75rem;
+            text-align: center;
+            float: left;
+            font-weight: bold;
+        }
+        #header .arrow{
+            border-top: 18px solid rgb(210, 248, 153) ;
+            border-bottom: 18px solid rgb(210, 248, 153);
+            border-left: 18px solid var(--maincolor);
+            float: left;
+        }
+        #header .running-text{
+            height: 100%;
+            width: 1005px;
+            float: left;
+            overflow: hidden;
+            
+        }
+        #header .running-text>ul{
+            width: 100%;
+            height: 100%;
+            animation:  runningtext linear 40s infinite;
+            position: relative;
+            white-space: nowrap;
+            line-height: 36px;
+            
+        }
+        #header .running-text>ul:hover{
+            animation-play-state: paused;
+        }
+        @keyframes runningtext{
+            0%{left: 100%;}
+            100%{left: -4800px;}
+        }
+        #header .running-text>ul>li{
+            display: inline-block;
+            font-weight: bold;
+            margin-left: 15px;
+            
+        }
+        #header .running-text>ul>li::before{
+            content: "<< ";
+            color: var(--maincolor);
+        }
+        #header .running-text>ul>li>a{
+            color: red;
+            text-decoration: none;
+        }
+        #header .running-text>ul>li>a:hover{
+            color: rgb(47, 207, 47);
+        }
+        #nav_menu{
+            height: 115px;
+            /*background: pink;*/
+        }
+        #nav_menu .anh{
+            float: left;
+            width: 302px;
+        }
+        #nav_menu .anh>img{
+            float: left;
+            margin-top: 20px;
+        }
+        #nav_menu .search {
+            float: left;
+            width: 370px;
+            height: 41px;
+            margin-top:35px ;
+            border-radius: 6px 0px 0px 6px;
+            border: 1px solid var(--maincolor);
+        }
+        #nav_menu .search input{
+            font-size: 1.2rem;
+            margin-top: 10px;
+            margin-left: 8px;
+            width: 350px;
+            float: left;
+            border: none;
+        }
+        #nav_menu .search input:focus{
+            outline: none;
+        }
+        #nav_menu .icon-search{
+            width: 66px;
+            height: 41px;
+            background: var(--maincolor);
+            float: left;
+            border-left: 1px solid var(--maincolor);
+            margin-top: 35px;
+            border-radius: 0px 6px 6px 0px;
+        }
+        #nav_menu .icon-search span{
+            font-size: 1.5rem;
+            color: white;
+            margin-top: 7.5px;
+            margin-left: 18px;
+        }
+        #nav_menu .contact{
+            width: 342px;
+            height: 35px;
+            float: left;
+            margin-top: 20px;
+            margin-left: 45px;
+        }
+        #nav_menu .contact>ul>li{
+            font-size: 0.9rem;
+            list-style: none;
+            float: left;
+            padding-left: 12px;
+        }
+        #nav_menu .contact>ul>li>span{
+            font-size: 0.8rem;
+        }
+        #nav_menu .contact>ul>li>a{
+            float: left;
+            color: black;
+            text-transform: uppercase;
+            border-left: 0.5px solid;
+            padding-left: 12px ;
+            text-decoration: none;
+        }
+        #nav_menu .contact>ul>li>a:hover{
+            color: rgb(47, 207, 47);
+        }
+        #nav_menu .camket{
+            width: 342px;
+            height: 35px;
+            float: left;
+            border-top: 0.3px dotted;
+            margin-left: 40px;
+            padding-top: 10px;
+        }
+        #nav_menu .camket>p>span{
+            text-transform: uppercase;
+            color: red;
+        }
+        #mainMenu{
+            height: 55px;
+            width: 100%;
+            background: rgb(251,246,240);
+        }
+        #mainMenu>ul{
+            text-transform: uppercase;
+            height: 100%; 
+        }
+        #mainMenu>ul>li{
+            text-transform: uppercase;
+            float: left;
+            list-style: none;
+            padding: 0px 30px;
+            font-size: 1rem;
+            font-weight: bold;
+            line-height: 55px;
+            position: relative;
+        }
+        #mainMenu>ul>li:hover{
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+        }
+        #mainMenu>ul>li>a{
+            text-decoration: none;
+            color: var(--maincolor);
+            text-align: center;
+        }
+        #mainMenu>ul>li:hover{
+            color: rgb(47, 207, 47);
+        }
+        #mainMenu>ul>li:hover>a{
+            color: rgb(47, 207, 47) ;
+        }
+        #mainMenu>ul>li>.giohang{
+            color: rgb(47, 207, 47);
+        }
+        #mainMenu>ul>li>ul{
+            width: 260px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            background: white;
+            list-style: none;
+            position: absolute;
+            left: 0;
+            padding: 10px 0;
+            display: none;
+            z-index: 1;
+        }
+        #mainMenu>ul>li:hover>ul{
+            display: block;
+            border-top: 4px solid rgb(47, 207, 47);
+        }
+        #mainMenu>ul>li>ul>li{
+            padding-left: 20px;
+            position: relative;
+        }
+        #mainMenu>ul>li>ul>li>a{
+            color: var(--maincolor);
+            text-decoration: none;
+            text-transform: none;
+            font-size: 1.2rem;
+        }
+        #mainMenu>ul>li>ul>li>a:hover{
+            color:rgb(47, 207, 47);
+        }
+        #mainMenu>ul>li>ul>li>ul{
+            width: 260px;
+            background: white;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            list-style: none;
+            position: absolute;
+            top: 5px;
+            left: 230px;
+            padding: 10px 0;
+            display: none;
+            z-index: 2;
+        }
+        #mainMenu>ul>li>ul>li:hover>ul{
+            display: block;
+            border-top: 4px solid rgb(47, 207, 47);
+        }
+        #mainMenu>ul>li>ul>li>ul>li{
+            padding-left: 20px;
+        }
+        #mainMenu>ul>li>ul>li>ul>li>a{
+            color: var(--maincolor);
+            text-decoration: none;
+            text-transform: none;
+            font-size: 1.2rem;
+        }
+        #mainMenu>ul>li>ul>li>ul>li>a:hover{
+            color:rgb(47, 207, 47);
+        }*/
+        #banner{
+            height: 400px;
+            width: 100%;
+        }
+        #banner>img{
+            width: 100%;
+            height: 100%;
+        }
+        #content{
+            height: 2146px;
+        }
+        #content .BichNhua{
+            width: 100%;
+            height: 50px;
+            text-align: center;
+            border-bottom: 0.5px solid ;
+        }
+        #content .BichNhua span{
+            text-transform: uppercase;
+            color: var(--maincolor);
+            font-weight: bold;
+            font-size: 1.4rem;
+            background: white;
+            padding: 0px 20px;
+            position: relative;
+            top: 33px;
+        }
+        #content .sp1{
+            margin-top: 50px;
+            height: 720px;
+        }
+        #content .sp1 .cacsp{
+            height: 609px;
+        }
+        #content .sp1 .cacsp>a{
+            width: 25%;
+            height: 50%;
+            display: block;
+            float: left;
+            padding-left: 11px;
+            text-decoration: none;
+        }
+        #content .sp1 .cacsp>a>img{
+            width: 262px;
+            height: 174px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            transition: transform .2s;
+        }
+        #content .sp1 .cacsp>a>img:hover{
+            -ms-transform: scale(0.5); /* IE 9 */
+            -webkit-transform: scale(0.5); /* Safari 3-8 */
+            transform: scale(1.07); 
+        }
+        #content .sp1 .cacsp>a>div{
+            text-align: center;
+            width: 262px;
+            font-size: 1.2rem;
+            color: var(--maincolor);
+            margin-top: 17px;
+        }
+        #content .sp1 .cacsp>a:hover>div{
+            color: rgb(47, 207, 47);
+        }
+        #content .sp1 .cacsp>a>div>div{
+            color: rgb(243, 132, 151);
+        }
+        #content .sp1 button{
+            width: 134px;
+            height: 41px;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            margin: 20px 510px;
+            background: white;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            border: none;
+        }
+        #content .sp1 button:hover{
+            background-color: green;
+        }
+        #content .kiemtra{
+            height: 150px;
+            position: relative;
+        }
+        #content .kiemtra img{
+            height: 100%;
+            width: 100%;
+        }
+        #content .kiemtra div{
+            font-size: 1.3rem;
+            position: absolute;
+            bottom: 35px;
+            color: white;
+            text-transform: uppercase;
+            width: 100%;
+            text-align: center;
+        }
+        #content .kiemtra>div>span{
+            color:rgb(77, 194, 77);
+            font-weight: bold;
+        }
+        #content .kiemtra>div>p{
+            font-size: 0.9rem;
+            margin: 10px 0;
+        }
+        #content .Tieu_canh{
+            height: 86px;
+            text-align: center;
+        }
+        #content .Tieu_canh>div{
+            height: 100%;
+            border-bottom: 0.5px dotted var(--maincolor);
+            text-transform: uppercase;
+            color: var(--maincolor);
+            font-size: 1.4rem;
+            font-weight: bold;
+            line-height: 120px;
+            margin-bottom: 20px;
+        }
+        #content .sp2{
+            height: 720px;
+            margin-top: 34px;
+        }
+        #content .sp2 .cacsp{
+            height: 609px;
+        }
+        #content .sp2 .cacsp>a{
+            width: 25%;
+            height: 50%;
+            display: block;
+            float: left;
+            padding-left: 11px;
+            text-decoration: none;
+        }
+        #content .sp2 .cacsp>a>img{
+            width: 262px;
+            height: 174px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            transition: transform .2s;
+        }
+        #content .sp2 .cacsp>a>img:hover{
+            -ms-transform: scale(0.5); /* IE 9 */
+            -webkit-transform: scale(0.5); /* Safari 3-8 */
+            transform: scale(1.07); 
+        }
+        #content .sp2 .cacsp>a>div{
+            text-align: center;
+            width: 262px;
+            font-size: 1.2rem;
+            color: var(--maincolor);
+            margin-top: 17px;
+        }
+        #content .sp2 .cacsp>a:hover>div{
+            color: rgb(47, 207, 47);
+        }
+        #content .sp2 .cacsp>a>div>div{
+            color: rgb(243, 132, 151);
+        }
+        #content .sp2 button{
+            width: 134px;
+            height: 41px;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            margin: 20px 510px;
+            background: white;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            border: none;
+        }
+        #content .sp2 button:hover{
+            background-color: green;
+        }
+        #content .phukien-chamsoc{
+            height: 280px;
+        }
+        #content .phukien-chamsoc .phukien{
+            height: 100%;
+            width: 556px;
+            background-color: pink;
+            float: left;
+            overflow: hidden;
+        }
+        #content .phukien-chamsoc .phukien>a>img{
+            height: 100%;
+            width: 100%;
+        }
+        #content .phukien-chamsoc .phukien>a>img:hover{
+            transform: scale(1.07);
+            transition: 0.5s;
+            opacity: 0.9;
+        }
+        #content .phukien-chamsoc .chamsoc{
+            height: 100%;
+            width: 556px;
+            background-color: red;
+            float: right;
+            overflow: hidden;
+        }
+        #content .phukien-chamsoc .chamsoc>a>img{
+            height: 100%;
+            width: 100%;
+        }
+        #content .phukien-chamsoc .chamsoc>a>img:hover{
+            transform: scale(1.07);
+            transition: 0.5s;
+            opacity: 0.9;
+        }
+        #footer{
+            height: 270px;
+            background-color: var(--maincolor);
+        }
+        #footer div{
+            height: 100%;
+            width: 33.33%;
+            float: left;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: white;
+            padding: 40px 10px;
+            padding-left: 65px;
+        }
+        #footer div>ul{
+            text-transform: none;
+            font-weight: normal;
+            font-size: 1.1rem;
+            margin: 15px 20px 15px 0;
+        }
+        #footer div>ul>li{
+            margin: 11px 0;
+            list-style: none;
+            text-align: justify;
+        }
+        #footer div>ul>li>span{
+            margin-right: 5px;
+        }
+        #footer div>ul>input{
+            width: 90%;
+            height: 40px;
+            background-color: var(--maincolor);
+            border: none;
+            padding: 10px;
+            border-bottom: 1px solid white;
+            margin-top: 20px;
+        }
+        #footer div>ul>input:focus{
+            outline: none;
+        }
+        .lienhe>ul>li> .fa{
+            padding: 10px;
+            font-size: 20px;
+            width: 40px;
+            text-align: center;
+            text-decoration: none;
+            margin: 5px 2px;
+            border: 1px solid;
+            border-radius: 50%;
+            color: white;
+        }
+        .lienhe>ul>li> .fa:hover{
+            background: rgba(241, 5, 5, 0.5);
+            border: none;
+        }
+        #footer .lienhe>ul> .BCT{
+            height: 45px;
+            width: 120px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div class="dtd">Đang tuyển dụng</div>
+        <div class="arrow"></div>
+        <div class="running-text">
+            <ul>
+                <li><a href="">Thông tin tuyển dụng nhân viên giao hàng tháng 10</a></li>
+                <li><a href="">Thông tin tuyển dụng nhân viên chăm sóc sen đá ngày 22 tháng 5 năm 2021</a></li>
+                <li><a href="">Vườn sen đá tuyển dụng nhân viên bán hàng và chăm sóc khách hàng lương thỏa thuận</a></li>
+                <li><a href="">Vườn sen đá cần tuyển gấp nhân viên làm theo giờ trong tháng 5</a></li>
+                <li><a href="">Tuyển gấp 5 nhân viên yêu thích cây cảnh, sen đá chăm sóc cửa hàng vào dịp tết nguyên đán</a></li>
+                <li><a href="">Vườn sen đá cần 5 bạn sinh viên đi giới thiệu sản phẩm tại Hồ Tây vào sáng ngày 6/7/2021(ngày Bảo vệ môi trường thế giới)</a></li>
+                <li><a href="">Thông tin tuyển dụng nhân viên thời vụ tháng 11</a></li>
+                <li><a href="">Thông tin tuyển dụng nhân viên bê đồ và lấy hàng (chỉ tuyển nữ)</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="nav_menu">
+        <div class="anh">
+            <img src="logoo.png" alt="">
+        </div>
+        <div class="search">
+                <input type="text" placeholder="Tìm kiếm danh mục, sản phẩm...">
+        </div>
+        <div class="icon-search">
+            <span class="glyphicon glyphicon-search"></span> 
+        </div>
+        <div class="contact">
+            <ul>
+                <li><span class="glyphicon glyphicon-earphone"></span></li>
+                <li>0965 344 951</li>
+                <li><a href="">Đăng ký</a></li>
+                <li><a href="">Đăng nhập</a></li>
+            </ul>
+        </div>
+        <div class="camket"><p> Giao hàng và thu tiền tại nhà <span>đơn hàng trên 100k</span></p> </div>
+    </div>
+    <div id="mainMenu">
+        <ul>
+            <li><a href=""><span class="glyphicon glyphicon-home"></span> Trang chủ</a></li>
+            <li>sản phẩm
+                <ul>
+                    <li><a href="">Sen đá bịch nhựa</a>
+                        <ul>
+                            <li><a href="">Sen đá cỡ nhỏ</a></li>
+                            <li><a href="">Sen đá cỡ vừa</a></li>
+                            <li><a href="">Sen đá cỡ lớn</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">Sen đá đồng giá 25k</a></li>
+                    <li><a href="">Xương rồng</a></li>
+                    <li><a href="">Cây trồng văn phòng</a></li>
+                    <li><a href="">Tiểu cảnh</a></li>
+                    <li><a href="">Chậu trồng cây</a>
+                        <ul>
+                            <li><a href="">Chậu đất nung</a></li>
+                            <li><a href="">Chậu sứ</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="">Phụ kiện trang trí</a></li>
+                    <li><a href="">Đất trồng, phân bón</a></li>
+                </ul>
+            </li>
+            <li>hướng dẫn mua hàng
+                <ul>
+                    <li><a href="">Hướng dẫn đặt hàng</a></li>
+                    <li><a href="">Hướng dẫn thanh toán</a></li>
+                    <li><a href="">Giao hàng</a></li>
+                    <li><a href="">Xem lại đơn hàng</a></li>
+                </ul>
+            </li>
+            <li><a href="page_ChamSoc.html">chăm sóc</a></li>
+            <li><a href="">tuyển dụng</a></li>
+            <li><a href="">Liên hệ</a></li>
+            <li><a href="" class="giohang">giỏ hàng <span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+        </ul>
+    </div>
+    <div id="banner">
+        <img src="banner1.jpg" alt="">
+    </div>
+    <div id="content">
+        <div class="BichNhua">
+            <span>cây trong bịch nhựa/chậu nhựa</span>
+        </div>
+        <div class="sp1">
+            <div class="cacsp">
+                <a href="">
+                    <img src="anh1.jpg" alt="">
+                    <div>Sen đá hoa hồng hà lan 2-3cm(không chậu)
+                        <div>6.000đ</div>
+                    </div>
+                </a>
+                <a href="">
+                    <img src="anh2.jpg" alt="">
+                    <div>Sen hồng kim 9-11cm (chậu nhựa)
+                        <div>40.000đ</div>
+                    </div>
+                </a>
+                <a href="">
+                    <img src="anh3.jpg" alt="">
+                    <div>Sen kim cương trắng 9-11cm (chậu nhựa)
+                        <div>40.000đ</div>
+                    </div>
+                </a>
+                <a href="">
+                    <img src="anh4.jpg" alt="">
+                    <div>Sen đá xanh cỡ vừa 9-11cm (chậu nhựa)
+                        <div>40.000đ</div>
+                    </div>
+                </a>
+                <a href="">
+                    <img src="anh5.jpg" alt="">
+                    <div>Xương rồng vạn lý (chậu nhựa)
+                        <div>90.000đ</div>
+                    </div>
+                </a>
+                <a href="">
+                    <img src="anh6.jpg" alt="">
+                    <div>Xương rồng trứng chim cỡ lớn (chậu nhựa)
+                        <div>70.000đ</div>
+                    </div>
+                </a>
+                <a href="">
+                    <img src="anh7.jpg" alt="">
+                    <div>Xương rồng thạch trụ thiên (chậu nhựa)
+                        <div>70.000đ</div>
+                    </div>
+                </a>
+                <a href="">
+                    <img src="anh8.jpg" alt="">
+                    <div>Xương rồng aster 3-4cm (chậu nhựa)
+                        <div>45.000đ</div>
+                    </div>
+                </a>
+            </div>
+            <button>Xem thêm</button>
+        </div>
+        <div class="kiemtra">
+            <img src="anhktra.jpg" alt="">
+            <div>
+                kiểm tra trước khi thanh toán <span>Hoàn tiền 100% nếu sản phẩm không giống mẫu</span> 
+                <p>TOÀN BỘ SẢN PHẨM CÂY ĐỀU ĐƯỢC CHỤP THỰC TẾ TẠI VƯỜN, GIAO HÀNG ĐẢM BẢO, HƯ GẪY ĐƯỢC ĐỔI TRẢ HOẶC HOÀN TIỀN</p>
+            </div>
+        </div>
+        <div class="Tieu_canh">
+            <div>tiểu cảnh trang trí</div>
+        </div>
+        <div class="sp2">
+            <div class="cacsp">
+                <a href="">
+                    <img src="anh1.1.jpg" alt="">
+                    <div>Combo 10 sen mini chậu đất nung tí hon
+                        <div>120.000đ</div>
+                    </div>
+                </a>
+                <a href="">
+                    <img src="anh1.2.jpg" alt="">
+                    <div>Sen mix 3 loại ngẫu nhiên chậu vuông
+                        <div>45.000đ</div>
+                    </div>
+                </a>
+                <a href="">
+                    <img src="anh1.3.jpg" alt="">
+                    <div>Sen mix 3 loại ngẫu nhiên chậu loe
+                        <div>45.000đ</div>
+                    </div>
+                </a>
+                <a href="">
+                    <img src="anh1.4.jpg" alt="">
+                    <div>Sen mix 3 loại ngẫu nhiên chậu trứng
+                        <div>45.000đ</div>
+                    </div>
+                </a>
+                <a href="">
+                    <img src="anh1.5.jpg" alt="">
+                    <div>Sen đá chậu hình
+                        <div>75.000đ</div>
+                    </div>
+                </a>
+                <a href="">
+                    <img src="anh1.6.jpg" alt="">
+                    <div>Sen đá chậu hình thú
+                        <div>75.000đ</div>
+                    </div>
+                </a>
+                <a href="">
+                    <img src="anh1.7.jpg" alt="">
+                    <div>Sen đá chậu hình đáng yêu
+                        <div>80.000đ</div>
+                    </div>
+                </a>
+                <a href="">
+                    <img src="anh1.8.jpg" alt="">
+                    <div>Sen đá chậu hình ngộ nghĩnh
+                        <div>80.000đ</div>
+                    </div>
+                </a>
+            </div>
+            <button>Xem thêm</button>
+        </div>
+        <div class="phukien-chamsoc">
+            <div class="phukien">
+                <a href="">
+                    <img src="phukientrangtri.jpg" alt="">
+                </a>
+            </div>
+            <div class="chamsoc">
+                <a href="">
+                    <img src="hdChamSoc.jpg" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="gioithieu">giới thiệu
+            <ul>
+                <li>Vườn sen đá cung cấp sen đá sỉ và lẻ số lượng lớn khu vực Hà Nội</li>
+                <li><span class="glyphicon glyphicon-home"></span> 87A, ngõ 151, phố Nguyễn Đức cảnh, phường Tương Mai, quận Hoàng Mai, Hà Nội</li>
+                <li><span class="glyphicon glyphicon-earphone"></span> 0965 344 951</li>
+            </ul>
+        </div>
+        <div class="nhantin">đăng ký nhận tin
+            <ul>
+                <li>Hãy nhập email của mình vào đây để nhận thông báo mới nhất của chúng tôi!</li>
+                <input type="text" placeholder="Nhập email của bạn">
+                <a href=""><span class="glyphicon glyphicon-send"></span></a>
+            </ul>
+        </div>
+        <div class="lienhe">kết nối với chúng tôi
+            <ul>
+                <li>
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                    <a href="#" class="fa fa-google"></a>
+                    <a href="#" class="fa fa-youtube"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                </li>
+                <img src="thanhtoan.jpg" alt="">
+                <img src="bocongthuong.png" alt="" class="BCT">
+            </ul>
+        </div>
+    </div>
+</body>
+</html> 
